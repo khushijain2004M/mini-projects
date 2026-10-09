@@ -1,0 +1,391 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Mini Projects · Local Showcase</title>
+    <style>
+      :root {
+        color-scheme: dark;
+        font-family: Inter, system-ui, sans-serif;
+        --line: #b9c7ff22;
+        --muted: #9ca7bd;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        min-width: 320px;
+        min-height: 100vh;
+        color: #f8f9ff;
+        background:
+          radial-gradient(circle at 10% 0, #3b1644, transparent 35%),
+          radial-gradient(circle at 90% 10%, #143664, transparent 36%), #080c17;
+      }
+      body:before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        background-image: radial-gradient(#a78bfa 1px, transparent 1px);
+        background-size: 48px 48px;
+        opacity: 0.07;
+      }
+      .shell {
+        width: min(1120px, calc(100% - 24px));
+        margin: auto;
+        padding: 38px 0;
+      }
+      .eyebrow {
+        font-size: 10px;
+        letter-spacing: 0.23em;
+        color: #60a5fa;
+        font-weight: 800;
+      }
+      .hero {
+        padding: 36px 0;
+      }
+      .hero h1 {
+        font-size: clamp(45px, 8vw, 82px);
+        line-height: 0.9;
+        letter-spacing: -0.065em;
+        margin: 12px 0;
+      }
+      .hero h1 span {
+        color: transparent;
+        background: linear-gradient(90deg, #f472b6, #a78bfa, #38bdf8);
+        background-clip: text;
+      }
+      .hero p {
+        color: var(--muted);
+        max-width: 600px;
+        line-height: 1.7;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 13px;
+      }
+      .card {
+        position: relative;
+        min-height: 180px;
+        padding: 20px;
+        border: 1px solid var(--line);
+        border-radius: 19px;
+        background: linear-gradient(145deg, #151b30ea, #0b101eea);
+        color: #fff;
+        text-decoration: none;
+        overflow: hidden;
+        transition: 0.2s;
+      }
+      .card:before {
+        content: "";
+        position: absolute;
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        right: -50px;
+        top: -50px;
+        background: var(--accent);
+        filter: blur(35px);
+        opacity: 0.2;
+      }
+      .card:hover {
+        transform: translateY(-4px);
+        border-color: color-mix(in srgb, var(--accent), white 20%);
+      }
+      .number {
+        font:
+          700 11px ui-monospace,
+          monospace;
+        color: var(--accent);
+      }
+      .card h2 {
+        font-size: 20px;
+        margin: 27px 0 8px;
+      }
+      .card p {
+        font-size: 12px;
+        color: var(--muted);
+        line-height: 1.6;
+      }
+      .arrow {
+        position: absolute;
+        right: 18px;
+        bottom: 17px;
+        color: var(--accent);
+      }
+      footer {
+        text-align: center;
+        color: var(--muted);
+        font-size: 10px;
+        padding: 28px;
+      }
+      @media (max-width: 780px) {
+        .grid {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+      @media (max-width: 480px) {
+        .grid {
+          grid-template-columns: 1fr;
+        }
+        .shell {
+          width: calc(100% - 18px);
+          padding-top: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="shell">
+      <section class="hero">
+        <p class="eyebrow">AUTOGIT / LOCAL BUILD LAB</p>
+        <h1>Thirty ideas.<br /><span>Thirty working websites.</span></h1>
+        <p>
+          Local MVP collection for projects 01–30. Nothing in this collection
+          has been uploaded to GitHub, Cloudflare, AutoGit or the portfolio.
+        </p>
+      </section>
+      <section class="grid">
+        <a class="card" style="--accent: #38bdf8" href="./01-weather-app/"
+          ><span class="number">01 / STORMGLASS</span>
+          <h2>Weather</h2>
+          <p>Live conditions, saved cities and a seven-day forecast.</p>
+          <span class="arrow">↗</span></a
+        >
+        <a
+          class="card"
+          style="--accent: #f472b6"
+          href="./02-password-generator/"
+          ><span class="number">02 / CIPHERFORGE</span>
+          <h2>Password Generator</h2>
+          <p>Private passwords and memorable passphrases.</p>
+          <span class="arrow">↗</span></a
+        >
+        <a class="card" style="--accent: #a78bfa" href="./03-form-validation/"
+          ><span class="number">03 / GATEFORM</span>
+          <h2>Form Validation</h2>
+          <p>Friendly sign-up and sign-in validation demo.</p>
+          <span class="arrow">↗</span></a
+        >
+        <a class="card" style="--accent: #ef4444" href="./04-stopwatch-app/"
+          ><span class="number">04 / CHRONO RED</span>
+          <h2>Stopwatch</h2>
+          <p>Accurate timer, laps, history and CSV export.</p>
+          <span class="arrow">↗</span></a
+        >
+        <a class="card" style="--accent: #c084fc" href="./05-digital-piano/"
+          ><span class="number">05 / NOCTURNE KEYS</span>
+          <h2>Digital Piano</h2>
+          <p>Two-octave synth with live record and replay.</p>
+          <span class="arrow">↗</span></a
+        >
+        <a class="card" style="--accent: #db2777" href="./06-tip-calculator/"
+          ><span class="number">06 / SPLITLY NIGHT</span>
+          <h2>Tip Calculator</h2>
+          <p>Tax, tip, people and transparent bill splitting.</p>
+          <span class="arrow">↗</span></a
+        >
+        <a class="card" style="--accent: #4ade80" href="./07-expense-tracker/"
+          ><span class="number">07 / LEDGER NIGHT</span>
+          <h2>Expense Tracker</h2>
+          <p>Local entries, filters, budgets and export.</p>
+          <span class="arrow">↗</span></a
+        >
+        <a class="card" style="--accent: #fb7185" href="./08-movie-search-app/"
+          ><span class="number">08 / FRAMEHUNT</span>
+          <h2>Movie Search</h2>
+          <p>Curated catalogue, filters and watchlist.</p>
+          <span class="arrow">↗</span></a
+        >
+        <a
+          class="card"
+          style="--accent: #8b5cf6"
+          href="./09-flashcard-learning-app/"
+          ><span class="number">09 / RECALL ORBIT</span>
+          <h2>Flashcards</h2>
+          <p>Local decks, flipping, ratings and progress.</p>
+          <span class="arrow">↗</span></a
+        >
+        <a class="card" style="--accent: #60a5fa" href="./10-typing-speed-test/"
+          ><span class="number">10 / VELOCITY TYPE</span>
+          <h2>Typing Test</h2>
+          <p>WPM, accuracy, multiple modes and local best.</p>
+          <span class="arrow">↗</span></a
+        >
+        <a class="card" style="--accent: #ef4444" href="./11-drum-kit/"
+          ><span class="number">11 / PULSEFOUNDRY</span>
+          <h2>Drum Kit</h2>
+          <p>Playable pads and step sequencer.</p>
+          <span class="arrow">↗</span></a
+        >
+        <a class="card" style="--accent: #ec4899" href="./12-qr-code-generator/"
+          ><span class="number">12 / LINKBLOOM</span>
+          <h2>QR Generator</h2>
+          <p>Multiple payloads and PNG export.</p>
+          <span class="arrow">↗</span></a
+        >
+        <a
+          class="card"
+          style="--accent: #3b82f6"
+          href="./13-currency-converter/"
+          ><span class="number">13 / RATEORBIT</span>
+          <h2>Currency Converter</h2>
+          <p>Dated reference-rate conversion.</p>
+          <span class="arrow">↗</span></a
+        >
+        <a
+          class="card"
+          style="--accent: #c084fc"
+          href="./14-image-gallery-modal/"
+          ><span class="number">14 / PRISMVAULT</span>
+          <h2>Image Gallery</h2>
+          <p>Original gallery with modal and favourites.</p>
+          <span class="arrow">↗</span></a
+        >
+        <a
+          class="card"
+          style="--accent: #8b5cf6"
+          href="./15-light-dark-mode-toggle/"
+          ><span class="number">15 / THEMESHIFT</span>
+          <h2>Theme Toggle</h2>
+          <p>Dark, light, system and accent controls.</p>
+          <span class="arrow">↗</span></a
+        >
+        <a
+          class="card"
+          style="--accent: #38bdf8"
+          href="./16-scroll-progress-bar/"
+          ><span class="number">16 / READLINE</span>
+          <h2>Scroll Progress</h2>
+          <p>Focused reading and section tracking.</p>
+          <span class="arrow">↗</span></a
+        >
+        <a
+          class="card"
+          style="--accent: #f472b6"
+          href="./17-clipboard-copy-tool/"
+          ><span class="number">17 / CLIPNEST</span>
+          <h2>Clipboard Tool</h2>
+          <p>Local searchable snippet workspace.</p>
+          <span class="arrow">↗</span></a
+        >
+        <a
+          class="card"
+          style="--accent: #a78bfa"
+          href="./18-text-to-speech-converter/"
+          ><span class="number">18 / VOXBLOOM</span>
+          <h2>Text to Speech</h2>
+          <p>Device voice narration controls.</p>
+          <span class="arrow">↗</span></a
+        >
+        <a
+          class="card"
+          style="--accent: #60a5fa"
+          href="./19-product-filter-list/"
+          ><span class="number">19 / NEONSHELF</span>
+          <h2>Product Filter</h2>
+          <p>Search, sort, wishlist and compare.</p>
+          <span class="arrow">↗</span></a
+        >
+        <a class="card" style="--accent: #8b5cf6" href="./20-music-player-app/"
+          ><span class="number">20 / NIGHTWAVE</span>
+          <h2>Music Player</h2>
+          <p>Original generated local tracks.</p>
+          <span class="arrow">↗</span></a
+        >
+        <a class="card" style="--accent: #38bdf8" href="./21-kanban-task-board/"
+          ><span class="number">21 / FLOWDOCK</span>
+          <h2>Kanban Board</h2>
+          <p>Persistent drag-and-drop tasks.</p>
+          <span class="arrow">↗</span></a
+        >
+        <a
+          class="card"
+          style="--accent: #ef4444"
+          href="./22-pomodoro-focus-timer/"
+          ><span class="number">22 / FOCUSEMBER</span>
+          <h2>Pomodoro Timer</h2>
+          <p>Focus and recovery cycles.</p>
+          <span class="arrow">↗</span></a
+        >
+        <a
+          class="card"
+          style="--accent: #a78bfa"
+          href="./23-habit-streak-tracker/"
+          ><span class="number">23 / STREAKGARDEN</span>
+          <h2>Habit Tracker</h2>
+          <p>Weekly check-ins and streaks.</p>
+          <span class="arrow">↗</span></a
+        >
+        <a
+          class="card"
+          style="--accent: #60a5fa"
+          href="./24-markdown-notes-editor/"
+          ><span class="number">24 / INKSPACE</span>
+          <h2>Markdown Notes</h2>
+          <p>Local notes with live preview.</p>
+          <span class="arrow">↗</span></a
+        >
+        <a
+          class="card"
+          style="--accent: #ec4899"
+          href="./25-color-gradient-studio/"
+          ><span class="number">25 / CHROMALAB</span>
+          <h2>Color Studio</h2>
+          <p>Palettes, gradients and contrast.</p>
+          <span class="arrow">↗</span></a
+        >
+        <a
+          class="card"
+          style="--accent: #38bdf8"
+          href="./26-json-formatter-validator/"
+          ><span class="number">26 / DATALENS</span>
+          <h2>JSON Formatter</h2>
+          <p>Format, minify and validate locally.</p>
+          <span class="arrow">↗</span></a
+        >
+        <a class="card" style="--accent: #8b5cf6" href="./27-unit-converter/"
+          ><span class="number">27 / MEASURELOOP</span>
+          <h2>Unit Converter</h2>
+          <p>Five categories and two-way input.</p>
+          <span class="arrow">↗</span></a
+        >
+        <a class="card" style="--accent: #f472b6" href="./28-memory-match-game/"
+          ><span class="number">28 / ECHOTILES</span>
+          <h2>Memory Game</h2>
+          <p>Pairs, timer, moves and local best.</p>
+          <span class="arrow">↗</span></a
+        >
+        <a
+          class="card"
+          style="--accent: #60a5fa"
+          href="./29-image-compressor-resizer/"
+          ><span class="number">29 / PIXELLITE</span>
+          <h2>Image Compressor</h2>
+          <p>Local resize, encode and download.</p>
+          <span class="arrow">↗</span></a
+        >
+        <a class="card" style="--accent: #ef4444" href="./30-decision-wheel/"
+          ><span class="number">30 / ORBITCHOICE</span>
+          <h2>Decision Wheel</h2>
+          <p>Weighted choices and fair local spin.</p>
+          <span class="arrow">↗</span></a
+        >
+        <a class="card" style="--accent: #22d3ee" href="./31-codeforge-academy/"
+          ><span class="number">31 / CODEFORGE</span><h2>CodeForge Academy</h2><p>Interactive TypeScript learning lab.</p><span class="arrow">↗</span></a>
+        <a class="card" style="--accent: #38bdf8" href="./32-frontend-quality-inspector/"
+          ><span class="number">32 / QUALITY INSPECTOR</span><h2>Frontend Quality Inspector</h2><p>Searchable quality audit workspace.</p><span class="arrow">↗</span></a>
+        <a class="card" style="--accent: #f472b6" href="./33-interview-mastery-hub/"
+          ><span class="number">33 / INTERVIEW HUB</span><h2>Interview Mastery Hub</h2><p>Question practice, notes and mock timer.</p><span class="arrow">↗</span></a>
+        <a class="card" style="--accent: #a855f7" href="./34-novaui-framework/"
+          ><span class="number">34 / NOVAUI</span><h2>NovaUI Framework</h2><p>Interactive component playground.</p><span class="arrow">↗</span></a>
+        <a class="card" style="--accent: #3b82f6" href="./35-developer-journey-roadmap/"
+          ><span class="number">35 / DEV JOURNEY</span><h2>Developer Journey Roadmap</h2><p>Role-based learning progress map.</p><span class="arrow">↗</span></a>
+      </section>
+      <footer>Local development collection · Projects 01–35</footer>
+    </main>
+  </body>
+</html>

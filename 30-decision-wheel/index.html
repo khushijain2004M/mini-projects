@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>OrbitChoice</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <header class="top">
+        <a class="brand" href="./"
+          ><span class="logo">30</span
+          ><span
+            ><strong>ORBITCHOICE</strong><small>DECISION WHEEL</small></span
+          ></a
+        ><span class="hint">LOCAL WEBSITE</span>
+      </header>
+      <section class="hero">
+        <span class="eyebrow">DECISION WHEEL</span>
+        <h1>Give choices<br />a fair spin.</h1>
+        <p>
+          A weighted local choice wheel with editable options, history and
+          reduced-motion support.
+        </p>
+      </section>
+      <section class="layout">
+        <article class="panel wheel-wrap">
+          <span class="pointer">➤</span
+          ><canvas id="wheel" width="500" height="500"></canvas>
+          <div class="row" style="width: min(430px, 100%)">
+            <button class="primary" id="spin" style="flex: 1">
+              Spin the wheel</button
+            ><button id="removeWinner">Remove winner</button>
+          </div>
+          <div class="winner-card">
+            <span class="hint" id="probability">Equal probability</span>
+            <h2 id="winner">Ready to choose</h2>
+          </div>
+        </article>
+        <aside class="panel">
+          <div class="head">
+            <h2>Build your wheel</h2>
+            <button id="add">+ Add</button>
+          </div>
+          <div class="preset-grid">
+            <select id="preset">
+              <option value="custom">Custom choices</option>
+              <option value="travel">Travel destination</option>
+              <option value="food">What to eat</option>
+              <option value="movie">Movie genre</option>
+              <option value="activity">What to do</option>
+              <option value="workout">Workout</option>
+              <option value="study">Study subject</option></select
+            ><button class="primary" id="loadPreset">Load category</button>
+          </div>
+          <div class="preference-box">
+            <span class="eyebrow">PREFERENCE FILTER</span
+            ><label
+              ><span>Travel mood</span
+              ><select id="mood">
+                <option value="all">Anything</option>
+                <option value="nature">Nature</option>
+                <option value="adventure">Adventure</option>
+                <option value="city">City life</option>
+                <option value="relax">Relaxing</option>
+                <option value="culture">Culture</option>
+              </select></label
+            ><label
+              ><span>Budget</span
+              ><select id="budget">
+                <option value="all">Any budget</option>
+                <option value="budget">Budget friendly</option>
+                <option value="mid">Mid range</option>
+                <option value="premium">Premium</option>
+              </select></label
+            ><button id="applyPreferences" style="width: 100%">
+              Suggest matching choices
+            </button>
+          </div>
+          <div class="option-tools">
+            <button id="equal">Equal weights</button
+            ><button id="shuffle">Shuffle</button
+            ><button id="paste">Paste list</button
+            ><button id="reset">Reset</button>
+          </div>
+          <div class="options" id="options"></div>
+          <p class="hint">
+            Weights change segment size and selection probability.
+          </p>
+          <div class="history">
+            <b>RECENT RESULTS</b>
+            <p id="history">None yet</p>
+            <button id="clearHistory">Clear history</button>
+          </div>
+        </aside>
+      </section>
+      <footer class="khushi-credit" style="position:relative;margin-top:42px;padding:32px 24px 18px;border:1px solid #5261812b;border-radius:18px;background:linear-gradient(135deg,#050a15f2,#071525eb 55%,#16091ceb);color:#91a0b9;font:500 12px/1.7 Inter,system-ui,sans-serif;overflow:hidden">
+        <div aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(90deg,transparent 49.8%,#22d3ee14 50%,transparent 50.2%),linear-gradient(#a855f70d 1px,transparent 1px);background-size:420px 100%,100% 46px;pointer-events:none"></div>
+        <div style="position:relative;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(240px,100%),1fr));gap:42px;align-items:start">
+          <section>
+            <strong style="display:block;color:#f8fafc;font:800 20px/1.1 ui-monospace,monospace;letter-spacing:.04em"><span style="color:#22d3ee">[</span><span style="color:#a855f7">SM</span><span style="color:#22d3ee">]</span></strong>
+            <p style="max-width:430px;margin:16px 0 10px;color:#9eabc1;font-size:14px">Learning by building — from modern web experiences to strong software-engineering fundamentals.</p>
+            <small style="display:block;color:#71829d;font:700 9px ui-monospace,monospace;letter-spacing:.2em">B.TECH IT STUDENT · FULL STACK DEVELOPER · BUILDER</small>
+            <div style="display:flex;gap:10px;margin-top:20px;flex-wrap:wrap">
+              <a aria-label="GitHub" href="https://github.com/khushijain2004M" target="_blank" rel="noreferrer" style="display:grid;place-items:center;width:40px;height:40px;border:1px solid #60708e55;border-radius:11px;color:#dce8ff;text-decoration:none">GH</a>
+              <a aria-label="LinkedIn" href="https://github.com/khushijain2004M" target="_blank" rel="noreferrer" style="display:grid;place-items:center;width:40px;height:40px;border:1px solid #60708e55;border-radius:11px;color:#dce8ff;text-decoration:none">in</a>
+              <a aria-label="Email" href="https://github.com/khushijain2004M" style="display:grid;place-items:center;width:40px;height:40px;border:1px solid #60708e55;border-radius:11px;color:#dce8ff;text-decoration:none">@</a>
+              <a aria-label="Portfolio" href="https://github.com/khushijain2004M" target="_blank" rel="noreferrer" style="display:grid;place-items:center;width:40px;height:40px;border:1px solid #60708e55;border-radius:11px;color:#dce8ff;text-decoration:none">↗</a>
+            </div>
+          </section>
+          <section>
+            <small style="display:block;color:#f8fafc;font:800 9px ui-monospace,monospace;letter-spacing:.2em">GET IN TOUCH</small>
+            <a href="https://github.com/khushijain2004M" style="display:block;margin-top:17px;color:#9eabc1;text-decoration:none;font-size:14px">github.com/khushijain2004M</a>
+            <p style="margin:12px 0;color:#9eabc1;font-size:14px">India</p>
+            <p style="display:flex;align-items:center;gap:8px;margin:12px 0;color:#bad8cb"><i style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#1ee6a7;box-shadow:0 0 14px #1ee6a7"></i>Open to internships &amp; collaboration</p>
+            <div style="display:flex;gap:7px;flex-wrap:wrap;margin-top:20px"><span style="padding:3px 9px;border:1px solid #52618144;border-radius:5px;font:600 9px ui-monospace,monospace">JavaScript</span><span style="padding:3px 9px;border:1px solid #52618144;border-radius:5px;font:600 9px ui-monospace,monospace">HTML</span><span style="padding:3px 9px;border:1px solid #52618144;border-radius:5px;font:600 9px ui-monospace,monospace">CSS</span></div>
+          </section>
+        </div>
+        <div style="position:relative;margin-top:28px;padding-top:16px;border-top:1px solid #5261812b;color:#65738c;font-size:10px">© 2026 Khushi Jain. Built with code, curiosity and creativity.</div>
+      </footer>
+    </main>
+    <script src="./script.js"></script>
+    
+  </body>
+</html>
+
+
